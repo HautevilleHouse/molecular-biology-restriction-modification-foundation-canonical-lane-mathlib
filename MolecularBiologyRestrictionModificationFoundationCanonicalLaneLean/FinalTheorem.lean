@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean.RestrictionEnzyme
+import MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean.Methyltransferase
+import MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean.Kinetics
+import MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean.HorizontalTransfer
+import MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean.EvolutionaryDynamics
+
+namespace HautevilleHouse
+namespace MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean
+
+def ConstrainedRMClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_rm_endgame (A : AdmissibleClass) :
+    ConstrainedRMClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MolecularBiologyRestrictionModificationFoundationCanonicalLaneLean
+end HautevilleHouse
